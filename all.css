@@ -61,7 +61,7 @@ a{
         max-width: 1232px;
         padding: 0 16px; 
         margin: 0 auto;
-    }
+        }
 }
 @media screen and (max-width:799px){
     .container{
@@ -113,6 +113,13 @@ a{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 0 auto;
+}
+@media screen and (min-width:1200px){
+    .contentArea{
+        width: 1200px;
+        margin: 0 auto;
+    }
 }
 .contentArea p{
     padding-top: 8px;
