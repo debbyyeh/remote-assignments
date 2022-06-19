@@ -62,12 +62,10 @@ function calculate2(data) {
   }
   return totalPrice * discountNum
 }
-
 console.log(calculate2(data))
 
 //Request 1: Click to Change Text
 const bannerText = document.querySelector('.banner')
-
 bannerText.addEventListener('click', function () {
   if (bannerText.innerHTML === '<h2> Welcome Message</h2>') {
     bannerText.innerHTML = '<h2>Have a Good Time!</h2>'
