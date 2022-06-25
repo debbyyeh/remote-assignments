@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" methon="POST">
+      <label for="">請輸入一個數字</label>
+      <input type="text" id="inputValue" />
+      <button type="submit" id="sendBtn">送出</button>
+    </form>
+    <p class="result"></p>
+    <script>
+      const sendBtn = document.getElementById('sendBtn')
+      const text = document.getElementById('inputValue')
+      const result = document.querySelector('.result')
+      sendBtn.addEventListener('click', function () {
+        const num = text.value
+        // Assignment 3 -3
+        let resultNum = 0
+        for (let i = 0; i < num; i++) {
+          resultNum += i
+        }
+        result.innerHTML = `你的輸入結果是<span>${resultNum}</span>`
+        text.value = ' '
+      })
+    </script>
+  </body>
+</html>
