@@ -7,9 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="" methon="POST">
+    <form action="/getData" methon="post">
       <label for="">請輸入一個數字</label>
-      <input type="text" id="inputValue" />
+      <input name="number" type="text" id="inputValue" />
       <button type="submit" id="sendBtn">送出</button>
     </form>
     <p class="result"></p>
@@ -17,14 +17,28 @@
       const sendBtn = document.getElementById('sendBtn')
       const text = document.getElementById('inputValue')
       const result = document.querySelector('.result')
-      sendBtn.addEventListener('click', function () {
-        const num = text.value
-        // Assignment 3 -3
-        let resultNum = 0
-        for (let i = 0; i < num; i++) {
-          resultNum += i
+
+      app.post('/getData', (req, res) => {
+        // res.send('str')
+        res.redirect('sum.html')
+      })
+      sendBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+        var str = text.value
+        // console.log(str)
+
+        var xhr = new XMLHttpRequest()
+        xhr.open('post', '/getData')
+        xhr.setRequestHeader(
+          'Content-type',
+          'application/x-www-form-urlencoded',
+        )
+        //number=10
+        var data = 'number=' + str
+        xhr.send(data)
+        xhr.onload = function () {
+          result.innerHTML = xhr.responseText
         }
-        result.innerHTML = `你的輸入結果是<span>${resultNum}</span>`
         text.value = ' '
       })
     </script>
