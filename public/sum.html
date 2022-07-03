@@ -7,21 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/getData" methon="post">
+    <div action="/getData" methon="post">
       <label for="">請輸入一個數字</label>
       <input name="number" type="text" id="inputValue" />
       <button type="submit" id="sendBtn">送出</button>
-    </form>
+    </div>
     <p class="result"></p>
     <script>
       const sendBtn = document.getElementById('sendBtn')
       const text = document.getElementById('inputValue')
       const result = document.querySelector('.result')
 
-      app.post('/getData', (req, res) => {
-        // res.send('str')
-        res.redirect('sum.html')
-      })
       sendBtn.addEventListener('click', function (e) {
         e.preventDefault()
         var str = text.value
