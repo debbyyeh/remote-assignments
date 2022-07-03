@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/debbyyeh/remote-assignments/issues"
   },
-  "homepage": "https://github.com/debbyyeh/remote-assignments#readme",
+  "homepage": "https://github.com/debbyyeh/remote-assignments/app.html",
   "dependencies": {
     "create-react-app": "^5.0.1",
     "express": "^4.18.1",
