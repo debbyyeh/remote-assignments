@@ -1,7 +1,9 @@
-const http = require('http')
+// const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+//增加靜態檔案,public資料夾
+app.use(express.static('public'))
 
 // Assignment 1: Your First Web Server
 app.get('/', (req, res) => {
@@ -32,18 +34,16 @@ app.get('/getData', webRequest, (req, res) => {
 
 //pug
 app.set('view engine', 'pug')
-//增加靜態檔案,public資料夾
-app.use(express.static('./public'))
-app.get('/', (req, res) => {
-  res.render('sum.html')
+
+app.get('/public', (req, res) => {
+  res.send('sum.html')
 })
 //傳送資料到後端
-app.post('/getData', (req, res) => {
-  console.log(req.body.number)
-  //轉址
-  res.redirect('/public/sum.html')
-})
-
+// app.post('/getData', (req, res) => {
+//   console.log(req.body.number)
+//   //轉址
+//   res.redirect('/public/sum.html')
+// })
 //增加body-parser
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

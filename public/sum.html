@@ -7,36 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <div action="/getData" methon="post">
+    <form action="sum.html">
       <label for="">請輸入一個數字</label>
       <input name="number" type="text" id="inputValue" />
       <button type="submit" id="sendBtn">送出</button>
-    </div>
-    <p class="result"></p>
-    <script>
-      const sendBtn = document.getElementById('sendBtn')
-      const text = document.getElementById('inputValue')
-      const result = document.querySelector('.result')
+      <p class="result"></p>
+    </form>
 
-      sendBtn.addEventListener('click', function (e) {
-        e.preventDefault()
-        var str = text.value
-        // console.log(str)
-
-        var xhr = new XMLHttpRequest()
-        xhr.open('post', '/getData')
-        xhr.setRequestHeader(
-          'Content-type',
-          'application/x-www-form-urlencoded',
-        )
-        //number=10
-        var data = 'number=' + str
-        xhr.send(data)
-        xhr.onload = function () {
-          result.innerHTML = xhr.responseText
-        }
-        text.value = ' '
-      })
-    </script>
+    <script src="./sum.js"></script>
   </body>
 </html>
